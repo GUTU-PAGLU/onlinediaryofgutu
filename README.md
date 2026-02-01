@@ -149,16 +149,9 @@
     <div id="message">You can see each other's diary on every first day of every month. Hopes it will save all the notes we write 💕</div>
 
     <script>
-        // Load saved notes on page load
-        window.onload = function() {
-            document.getElementById('prince-notes').value = localStorage.getItem('prince-diary') || '';
-            document.getElementById('gutu-notes').value = localStorage.getItem('gutu-diary') || '';
-        };
-
-        // Save notes function with email sending
+        // Save notes function with email sending (no localStorage)
         function saveNotes(diary) {
             const notes = document.getElementById(diary + '-notes').value;
-            localStorage.setItem(diary + '-diary', notes);
             
             // Send email via EmailJS
             const templateParams = {
@@ -169,9 +162,9 @@
             
             emailjs.send('service_08qen3h', '9czujxIc6ctdwKhZEGUAD', templateParams) // Your Service ID and Template ID
                 .then(function(response) {
-                    alert('Notes saved and emailed! 💾📧');
+                    alert('Notes emailed! 📧');
                 }, function(error) {
-                    alert('Notes saved, but email failed. Check console for details.');
+                    alert('Email failed. Check console for details.');
                     console.log('EmailJS error:', error);
                 });
         }
