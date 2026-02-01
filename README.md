@@ -1,0 +1,2 @@
+# onlinediaryofgutu
+type your diary
