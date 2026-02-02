@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
         (function() {
-            emailjs.init("Ok21fhdzR58W7As2K"); // Your Public Key
+            emailjs.init("eYvRww5Z7KHJ30qBu"); // Your Public Key
         })();
     </script>
     <style>
@@ -72,34 +72,6 @@
         .save-btn:hover {
             transform: scale(1.05);
         }
-        .reveal-btn {
-            background: linear-gradient(45deg, #48cae4, #023e8a);
-            color: white;
-            font-size: 20px;
-            padding: 15px 30px;
-            animation: pulse 2s infinite;
-            margin-top: 20px;
-        }
-        .reveal-btn:hover {
-            transform: scale(1.1);
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        #message {
-            font-size: 18px;
-            margin-top: 20px;
-            display: none;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            animation: fadeIn 1s ease-in;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
         /* Floating flowers */
         .flower {
             position: absolute;
@@ -145,8 +117,6 @@
             <button class="save-btn" onclick="saveNotes('gutu')">Save to 2026 Diary</button>
         </div>
     </div>
-    <button class="reveal-btn" onclick="revealDiaries()">Reveal Each Other Diary</button>
-    <div id="message">You can see each other's diary on every first day of every month. Hopes it will save all the notes we write 💕</div>
 
     <script>
         // Save notes function with email sending (no localStorage)
@@ -160,18 +130,13 @@
                 date: new Date().toLocaleString()
             };
             
-            emailjs.send('service_08qen3h', '9czujxIc6ctdwKhZEGUAD', templateParams) // Your Service ID and Template ID
+            emailjs.send('service_08qen3h', 'template_faoh539', templateParams) // Your Service ID and Template ID
                 .then(function(response) {
                     alert('Notes emailed! 📧');
                 }, function(error) {
                     alert('Email failed. Check console for details.');
                     console.log('EmailJS error:', error);
                 });
-        }
-
-        // Reveal function
-        function revealDiaries() {
-            document.getElementById('message').style.display = 'block';
         }
     </script>
 </body>
