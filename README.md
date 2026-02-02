@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shared Diaries 2026</title>
     <!-- EmailJS Script -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://unpkg.com/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
         (function() {
             emailjs.init("eYvRww5Z7KHJ30qBu"); // Your Public Key
